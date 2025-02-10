@@ -1,19 +1,21 @@
 import React from "react";
-import { CDN_URL } from "../utils/mockdata";
+import { CDN_URL } from "../utils/constants";
 const Body = (props) => {
   const { resData } = props;
   // const { loggedInUser } = useContext(UserContext);
   const {
-      cloudinaryImageId,
+    cloudinaryImageId,
       name,
       avgRating,
       cuisines,
       costForTwo,
       sla,
     } = resData;
-  
+   console.log(resData);
+   
     return (
       <div className="resCard" >
+        
         <img
           className="rounded-lg"
           alt="res-logo"

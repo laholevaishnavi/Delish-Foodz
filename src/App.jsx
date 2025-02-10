@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       { index: true, element: <BodyWrapper /> }, // Default child route
       { path: "contact", element: <Contact /> },
       { path: "about", element: <About name={"Vaishnavi"} /> },
-      { path: "restaurants/:resid", element: <RestaurantMenu /> },
+      { path: "/restaurants/:resid", element: <RestaurantMenu /> },
       { path: "cart", element: <Cart /> },
       { path: "grocery", element: <Grocery /> }, // Note: Changed to lowercase for consistency
     ],
