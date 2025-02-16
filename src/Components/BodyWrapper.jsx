@@ -21,11 +21,11 @@ const BodyWrapper = () => {
       console.log(data);
 
       setListOfRestaurant(
-        data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
       setFilteredRestaurant(
-        data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
     } catch (error) {
@@ -46,14 +46,15 @@ const BodyWrapper = () => {
     );
     setFilteredRestaurant(filteredList);
   };
+ console.log(listOfRestaurant);
 
   return (
-    <>
-      <div className="search m-4 p-4">
+    <><div >
+      <div className=" m-4 p-4">
         <input
           type="text"
           data-testid="searchInput"
-          className="border border-solid border-black"
+          className="border  border-solid border-black"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
@@ -64,13 +65,14 @@ const BodyWrapper = () => {
           Search
         </button>
       </div>
-      <div className="search m-4 p-4 flex items-center">
+      <div className="m-4 p-4 flex items-center">
         <button
           className="px-4 py-2 bg-gray-100 rounded-lg"
           onClick={handleTopRated}
         >
           Top Rated Restaurants
         </button>
+      </div>
       </div>
       <div className="BodyWrapper"></div>
       <div className="restaurantContainer">
@@ -85,6 +87,7 @@ const BodyWrapper = () => {
           <Shimmer />
         )}
       </div>
+      
     </>
   );
 };

@@ -1,14 +1,15 @@
 import "./App.css";
+import { lazy } from "react";
 import Header from "./Components/Header.jsx";
 import Contact from "./Components/Contact.jsx";
 import Footer from "./Components/Footer.jsx";
 import About from "./Components/About.jsx";
 import Cart from "./Components/Cart.jsx";
 import Error from "./Components/Error.jsx";
-import Grocery from "./Components/Grocery.jsx";
+// import Grocery from "./Components/Grocery.jsx";
 import RestaurantMenu from "./Components/RestaurantMenu.jsx";
 import BodyWrapper from "./Components/BodyWrapper.jsx";
-import React from "react";
+import React, { Suspense } from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/Usercontext";
 
@@ -22,6 +23,10 @@ const PageLayout = () => {
   );
 };
 
+// Lazy loading, code splitting, chunking or dynamic bunduling of Grocery Component. 
+const Grocery = lazy(()=> import("./Components/Grocery.jsx"));
+
+
 // Create the router with routes defined
 const router = createBrowserRouter([
   {
@@ -32,9 +37,16 @@ const router = createBrowserRouter([
       { index: true, element: <BodyWrapper /> }, // Default child route
       { path: "contact", element: <Contact /> },
       { path: "about", element: <About name={"Vaishnavi"} /> },
-      { path: "/restaurants/:resid", element: <RestaurantMenu /> },
+      { path: "/restaurants/:resId", element: <RestaurantMenu /> },
       { path: "cart", element: <Cart /> },
-      { path: "grocery", element: <Grocery /> }, // Note: Changed to lowercase for consistency
+      {
+        path: "grocery",
+        element: (
+          <Suspense fallback={<h1>Loading Data!!!!!!</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
+      }, // Note: Changed to lowercase for consistency
     ],
   },
 

@@ -32,11 +32,10 @@
   cursor: pointer;
 }
 .resCard{
-  height: 400px;
+  /* height: 400px; */
   width: 250px;
   border: 1px solid grey;
   text-align: center;
-  line-height: 12px;
   margin: 10px 10px;
   
 
