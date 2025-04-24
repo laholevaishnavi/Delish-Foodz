@@ -1,68 +1,41 @@
-.Header {
-  display: flex;
-  justify-content: space-between;
-  /* background-color: blueviolet; */
-  height: 150px;
-  border: 1px solid black;
-}
-.logo {
-  width: 140px;
-  height: 140px;
-}
-.logoContainer {
-  margin-left: 50px;
-}
-.NavIcons > ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* background-color: aqua; */
-  height: 90%;
-  margin: 8px 50px;
-}
+
 .NavIcons > ul > li {
-  list-style-type: none;
-  margin: 0 50px;
-  padding: 7px 15px;
-  font-size: 20px;
+  margin: 0 20px;
+  padding: 6px 10px;
+  font-size: 18px;
 }
 .NavIcons > ul > li:hover {
-  border: 1px solid black;
-  border-radius: 50px;
+  background-color: rgb(243, 243, 243);
+  border-radius: 10px;
   cursor: pointer;
+  
 }
 .resCard{
   /* height: 400px; */
-  width: 250px;
-  border: 1px solid grey;
+  /* width: 250px; */
+  /* border: 1px solid grey; */
   text-align: center;
-  margin: 10px 10px;
+  /* margin: 10px 10px; */
   
 
 }
 .resCard:hover{
 cursor: pointer;
-border: 1px solid rgb(0, 0, 0);
+/* border: 1px solid rgb(0, 0, 0); */
 }
-.resCard > img {
-  height: 210px;
-  width: 100%;
-}
-.search{
+
+/* .search{
   width: 100%;
   font-size: 20px;
   margin:10px 0;
   border: 1px solid balck;
   height: 25px;
-}
+} */
 
-.restaurantContainer{
-  display: flex;
-  flex-wrap: wrap;
-}
-.restaurantContainer{
+
+/* .restaurantContainer{
   padding: 10px 10px;
-}
+} */
 
 .Shimmer-card{
   height: 390px;
