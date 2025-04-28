@@ -15,17 +15,18 @@ import UserContext from "./utils/Usercontext";
 
 const PageLayout = () => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <Outlet />
+      <div className="flex-grow">
+        <Outlet />
+      </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
 // Lazy loading, code splitting, chunking or dynamic bunduling of Grocery Component. 
-const Grocery = lazy(()=> import("./Components/Grocery.jsx"));
-
+const Grocery = lazy(() => import("./Components/Grocery.jsx"));
 
 // Create the router with routes defined
 const router = createBrowserRouter([

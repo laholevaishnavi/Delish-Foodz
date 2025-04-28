@@ -17,18 +17,18 @@ const BodyWrapper = () => {
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
       );
       const data = await response.json();
-      // console.log(data);
-      // console.log(imageId);  
-      
 
-      setListOfRestaurant(
+      const restaurantsFromCard1 =
         data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
-      setFilteredRestaurant(
-        data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
+          ?.restaurants;
+      const restaurantsFromCard2 =
+        data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+
+      const restaurants = restaurantsFromCard1 || restaurantsFromCard2 || [];
+
+      setListOfRestaurant(restaurants);
+      setFilteredRestaurant(restaurants);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -78,7 +78,7 @@ const BodyWrapper = () => {
         </button>
       </div>
     </div>
-      <div className="restaurantContainer items-center mx-12 sm:mx-10 flex justify-center flex-wrap gap-6">
+      <div className="restaurantContainer items-center  sm:mx-10 flex justify-center flex-wrap gap-6">
         {Array.isArray(filteredRestaurant) && filteredRestaurant.length > 0 ? (
           filteredRestaurant.map((restaurant) => (
             <Link to={`/restaurants/${restaurant?.info.id}`} key={restaurant?.info.id}>

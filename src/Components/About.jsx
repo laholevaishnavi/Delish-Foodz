@@ -17,7 +17,7 @@ const About = () => {
       <div className="w-full md:w-1/2">
         <img
           className="block w-full h-auto rounded-lg"
-          src="https://t3.ftcdn.net/jpg/02/41/30/72/360_F_241307210_MjjaJC3SJy2zJZ6B7bKGMRsKQbdwRSze.webp"
+          src="https://cdn.pixabay.com/photo/2024/02/16/20/13/burger-8578288_1280.jpg"
           alt=""
         />
       </div>
