@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => (
-  <footer className=" text-gray-900  bottom-0 font-medium text-center py-4 text-sm mt-3 shadow-lg">
+  <footer className=" text-gray-900  bg-gradient-to-r from-orange-100 via-yellow-100 to-orange-100 bottom-0 font-medium text-center py-4 text-sm  shadow-lg">
     <p>
       Made with <span aria-label="love" role="img">❤️</span> by <span className="font-bold">Vaishnavi Lahole</span>
     </p>

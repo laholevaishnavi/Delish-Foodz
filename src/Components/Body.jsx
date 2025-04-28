@@ -8,7 +8,7 @@ const Body = (props) => {
   // console.log(resData);
 
   return (
-    <div className="resCard flex-col flex items-center w-64 rounded-lg leading-10 shadow-slate-500 mx-8 my-5 shadow-xl">
+    <div className="resCard flex-col flex items-center w-64 rounded-lg leading-10 shadow-slate-500 shadow-xl">
       <img
         className="border w-56 h-52 rounded-lg"
         alt="res-logo"

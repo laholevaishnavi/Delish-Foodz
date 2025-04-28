@@ -18,7 +18,7 @@ const BodyWrapper = () => {
       );
       const data = await response.json();
       // console.log(data);
-      // console.log(imageId);
+      // console.log(imageId);  
       
 
       setListOfRestaurant(
@@ -52,37 +52,37 @@ const BodyWrapper = () => {
   return (
     <>
     
-    <div className="flex justify-center gap-9 items-center mx-10  ">
-      <div className=" border-slate-300 shadow-black  rounded-md shadow-md ">
+    <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-9 items-center mx-4 sm:mx-10 my-4">
+      <div className="w-full sm:w-auto border-slate-300 shadow-black rounded-md shadow-md flex">
         <input
           type="text"
           data-testid="searchInput"
-          className="border-slate-400 rounded-md shadow-sm h-9"
+          className="border-slate-400 rounded-l-md shadow-sm h-10 w-full px-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+          placeholder="Search restaurants..."
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
-          className="px-4 py-1 rounded-md bg-gray-100  "
+          className="px-4 py-2 rounded-r-md bg-green-600 text-white font-semibold hover:bg-green-700 transition"
           onClick={handleSearch}
         >
           Search
         </button>
       </div>
-      <div className=" py-4 flex items-center">
+      <div className="w-full sm:w-auto py-2 flex justify-center">
         <button
-          className="px-4 py-1 h-9  bg-gray-100 rounded-md"
+          className="px-6 py-2 h-10 bg-green-600 text-white rounded-md font-semibold hover:bg-green-700 transition"
           onClick={handleTopRated}
         >
           Top Rated Restaurants
         </button>
       </div>
-      </div>
-      <div className="restaurantContainer  mx-10 flex justify-center flex-wrap ">
+    </div>
+      <div className="restaurantContainer items-center mx-12 sm:mx-10 flex justify-center flex-wrap gap-6">
         {Array.isArray(filteredRestaurant) && filteredRestaurant.length > 0 ? (
           filteredRestaurant.map((restaurant) => (
-            
-            <Link to={`/restaurants/${restaurant?.info.id}`}>
-              <Body resData={restaurant?.info} key={restaurant?.info.id} />
+            <Link to={`/restaurants/${restaurant?.info.id}`} key={restaurant?.info.id}>
+              <Body resData={restaurant?.info} />
             </Link>
           ))
         ) : (
