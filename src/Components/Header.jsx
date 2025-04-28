@@ -78,7 +78,7 @@ src="https://cdn.pixabay.com/photo/2022/07/31/20/37/fries-7356824_1280.png"     
             </li>
             <li className="md:mx-2">
               <button
-                className="login bg-white text-green-700   rounded-md hover:bg-green-100 transition"
+                className="login bg-transparent font-semibold  text-green-700  "
                 onClick={() => {
                   btnValue === "Login" ? setbtnValue("Logout") : setbtnValue("Login");
                   setMenuOpen(false);
