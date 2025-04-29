@@ -9,9 +9,12 @@ const [showcategory,setshowcategory] = useState(false);
 
   };
   return (
-    <div className="text-center w-full  text-white bg-gray-900   mx-auto">
-      <div className=" ">
-        <div onClick={handleClick} className="flex cursor-pointer justify-between px-6 py-3">
+    <div className="text-center w-full text-white bg-gray-900 mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto">
+        <div
+          onClick={handleClick}
+          className="flex cursor-pointer justify-between px-4 py-3 sm:px-6 md:px-8 lg:px-10 text-sm sm:text-base md:text-lg lg:text-xl"
+        >
           <span>
             {data.title} - {data.itemCards.length} categories
           </span>

@@ -50,23 +50,22 @@ const Header = () => {
 
       {/* Mobile Menu Overlay with Gradient */}
       {menuOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold text-white transition-all md:hidden
-          bg-gradient-to-b from-orange-300 via-orange-400 to-orange-500 ">
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center space-y-6 text-base font-normal text-green-900 transition-all md:hidden bg-gradient-to-b from-orange-100 via-orange-200 to-green-100">
           <button
-            className="absolute top-6 right-6 text-3xl text-white focus:outline-none"
+            className="absolute top-6 right-6 text-3xl text-green-900 focus:outline-none hover:text-green-700 transition"
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
           >
             &times;
           </button>
-          <span>{onlineStatus ? "Online 🟢" : "Offline 🔴"}</span>
-          <Link to="/" onClick={() => setMenuOpen(false)} className="hover:text-yellow-200">Home</Link>
-          <Link to="/about" onClick={() => setMenuOpen(false)} className="hover:text-yellow-200">About</Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:text-yellow-200">Contact</Link>
-          <Link to="/grocery" onClick={() => setMenuOpen(false)} className="hover:text-yellow-200">Grocery</Link>
-          <Link to="/cart" onClick={() => setMenuOpen(false)} className="hover:text-yellow-200">Cart</Link>
+          <span className="text-green-800">{onlineStatus ? "Online 🟢" : "Offline 🔴"}</span>
+          <Link to="/" onClick={() => setMenuOpen(false)} className="hover:text-green-700 transition">Home</Link>
+          <Link to="/about" onClick={() => setMenuOpen(false)} className="hover:text-green-700 transition">About</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:text-green-700 transition">Contact</Link>
+          <Link to="/grocery" onClick={() => setMenuOpen(false)} className="hover:text-green-700 transition">Grocery</Link>
+          <Link to="/cart" onClick={() => setMenuOpen(false)} className="hover:text-green-700 transition">Cart</Link>
           <button
-            className="mt-4 px-8 py-2 rounded bg-white text-green-700 font-semibold text-lg hover:bg-gray-100 transition"
+            className="mt-4 px-8 py-2 rounded bg-green-300 text-green-900 font-normal text-base hover:bg-green-400 transition"
             onClick={() => {
               setBtnValue(btnValue === "Login" ? "Logout" : "Login");
               setMenuOpen(false);
