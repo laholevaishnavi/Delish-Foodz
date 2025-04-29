@@ -59,7 +59,7 @@ src="https://cdn.pixabay.com/photo/2022/07/31/20/37/fries-7356824_1280.png"     
           </button>
           <ul className="flex  flex-col md:flex-row md:items-center font-medium list-none justify-center md:h-full p-10 md:p-0 space-y-8 md:space-y-0 md:space-x-6 text-2xl md:text-base">
             <li className=" md:mx-2 " onClick={() => setMenuOpen(false)}>
-              Online Status: {onlineStatus ? "🟢" : "🔴"}
+              {onlineStatus ? "Online : 🟢" : "Offline : 🔴"}
             </li>
             <li className="md:mx-2 cursor-pointer hover:text-green-700 " onClick={() => setMenuOpen(false)}>
               <Link to="/">Home</Link>
