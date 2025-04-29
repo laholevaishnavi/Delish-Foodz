@@ -93,7 +93,7 @@ const BodyWrapper = () => {
           ))
         ) : (
           <div className="text-center w-full text-lg font-semibold text-gray-700 mt-10">
-            No restaurants found for the search criteria.
+           <Shimmer/>
           </div>
         )}
       </div>
