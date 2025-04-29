@@ -38,10 +38,15 @@ const BodyWrapper = () => {
   };
 
   const handleSearch = () => {
-    const filteredRestaurant = listOfRestaurant.filter((res) =>
-      res.info.name.toLowerCase().includes(searchText.toLowerCase())
-    );
-    setFilteredRestaurant(filteredRestaurant);
+    try {
+      const filteredRestaurant = listOfRestaurant.filter((res) =>
+        res.info.name.toLowerCase().includes(searchText.toLowerCase())
+      );
+      setFilteredRestaurant(filteredRestaurant);
+    } catch (error) {
+      console.error("Error during search:", error);
+      setFilteredRestaurant([]);
+    }
   };
 
   const handleTopRated = () => {
@@ -80,14 +85,16 @@ const BodyWrapper = () => {
         </div>
       </div>
       <div className="restaurantContainer items-center  sm:mx-10 flex justify-center flex-wrap gap-6">
-        {Array.isArray(filteredRestaurant) && filteredRestaurant.length > 0 ? (
+      {Array.isArray(filteredRestaurant) && filteredRestaurant.length > 0 ? (
           filteredRestaurant.map((restaurant) => (
             <Link to={`/restaurants/${restaurant?.info.id}`} key={restaurant?.info.id}>
               <Body resData={restaurant?.info} />
             </Link>
           ))
         ) : (
-          <Shimmer />
+          <div className="text-center w-full text-lg font-semibold text-gray-700 mt-10">
+            No restaurants found for the search criteria.
+          </div>
         )}
       </div>
     </>
