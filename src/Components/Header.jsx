@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnValue, setBtnValue] = useState("Login");
   const [menuOpen, setMenuOpen] = useState(false);
   const onlineStatus = useOnlineStatus();
-
+ //subscribing to the store using the selector.
+   const cartItems = useSelector((store)=>store.cart.items);
+   
   return (
     <header className="bg-white border-b shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 h-16">
@@ -38,7 +41,7 @@ const Header = () => {
           <Link to="/about" className="hover:text-green-700 transition">About</Link>
           <Link to="/contact" className="hover:text-green-700 transition">Contact</Link>
           <Link to="/grocery" className="hover:text-green-700 transition">Grocery</Link>
-          <Link to="/cart" className="hover:text-green-700 transition">Cart</Link>
+          <Link to="/cart" className="hover:text-green-700 transition">Cart-({cartItems.length} items)</Link>
           <button
             className="ml-2 px-4 py-1 rounded bg-green-600 text-white font-semibold hover:bg-green-700 transition"
             onClick={() => setBtnValue(btnValue === "Login" ? "Logout" : "Login")}
@@ -63,7 +66,7 @@ const Header = () => {
           <Link to="/about" onClick={() => setMenuOpen(false)} className="hover:text-green-700 transition">About</Link>
           <Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:text-green-700 transition">Contact</Link>
           <Link to="/grocery" onClick={() => setMenuOpen(false)} className="hover:text-green-700 transition">Grocery</Link>
-          <Link to="/cart" onClick={() => setMenuOpen(false)} className="hover:text-green-700 transition">Cart</Link>
+          <Link to="/cart" onClick={() => setMenuOpen(false)} className="hover:text-green-700 transition">Cart-({cartItems.length} items)</Link>
           <button
             className="mt-4 px-8 py-2 rounded bg-green-300 text-green-900 font-normal text-base hover:bg-green-400 transition"
             onClick={() => {

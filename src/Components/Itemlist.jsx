@@ -1,8 +1,20 @@
 import React from "react";
 import { CDN_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItems } from "../utils/cartSlice";
 
 const Itemlist = ({ items }) => {
   // console.log(items.card.info.name);
+
+const dispatch = useDispatch()
+   
+  const handleAddIem = (item)=>{
+    //dispatch the action and for that we will be using useDispatch hook
+    // dispatch(addItems("pizza"));
+
+    dispatch(addItems(item));
+    //added specific item instead of dummy data
+  }
 
   return (
     <div>
@@ -21,7 +33,8 @@ const Itemlist = ({ items }) => {
               alt="Image"
               className="w-full sm:w-3/5 rounded-lg shadow-lg shadow-slate-900"
             />
-            <button className="px-4 py-1 mt-3 bg-slate-950 text-white rounded-lg w-full sm:w-auto text-center">
+            {/* onClick of this button -->dispatch the actions ->reducer function will be called */}
+            <button onClick={()=>handleAddIem(item)} className="px-4 py-1 mt-3 bg-slate-950 text-white rounded-lg w-full sm:w-auto text-center">
               Add To Cart
             </button>
           </div>

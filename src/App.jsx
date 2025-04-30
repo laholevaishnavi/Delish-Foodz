@@ -12,6 +12,8 @@ import BodyWrapper from "./Components/BodyWrapper.jsx";
 import React, { Suspense } from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/Usercontext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js"
 
 const PageLayout = () => {
   return (
@@ -26,6 +28,7 @@ const PageLayout = () => {
 };
 
 // Lazy loading, code splitting, chunking or dynamic bunduling of Grocery Component. 
+//use of lazy loading?
 const Grocery = lazy(() => import("./Components/Grocery.jsx"));
 
 // Create the router with routes defined
@@ -35,7 +38,7 @@ const router = createBrowserRouter([
     element: <PageLayout />,
     errorElement: <Error />, // Specify the error element for this route
     children: [
-      { index: true, element: <BodyWrapper /> }, // Default child route
+      { index: true, element: <BodyWrapper /> }, // This will act as Default child route
       { path: "contact", element: <Contact /> },
       { path: "about", element: <About name={"Vaishnavi"} /> },
       { path: "/restaurants/:resId", element: <RestaurantMenu /> },
@@ -56,9 +59,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{ loggedInUser: "Default User" }}>
       <RouterProvider router={router} />
     </UserContext.Provider>
+    </Provider>
   );
 }
 
