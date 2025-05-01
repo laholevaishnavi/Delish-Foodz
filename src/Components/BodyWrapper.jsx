@@ -92,7 +92,7 @@ const BodyWrapper = () => {
             </Link>
           ))
         ) : (
-          <div className="text-center w-full text-lg font-semibold text-gray-700 mt-10">
+          <div className="text-center w-full text-lg font-semibold text-gray-700 ">
            <Shimmer/>
           </div>
         )}
