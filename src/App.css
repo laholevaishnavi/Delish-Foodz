@@ -9,33 +9,6 @@
   cursor: pointer;
   
 }
-.resCard{
-  /* height: 400px; */
-  /* width: 250px; */
-  /* border: 1px solid grey; */
-  text-align: center;
-  /* margin: 10px 10px; */
-  
-
-}
-.resCard:hover{
-cursor: pointer;
-/* border: 1px solid rgb(0, 0, 0); */
-}
-
-/* .search{
-  width: 100%;
-  font-size: 20px;
-  margin:10px 0;
-  border: 1px solid balck;
-  height: 25px;
-} */
-
-
-/* .restaurantContainer{
-  padding: 10px 10px;
-} */
-
 .shimmer-envelop{
   display: flex;
   flex-wrap: wrap;
@@ -88,6 +61,6 @@ cursor: pointer;
     transform: translateX(0);
   }
   100% {
-    transform: translateX(300%);
+    transform: translateX(300%) ;
   }
 }
